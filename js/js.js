@@ -23,7 +23,7 @@ $(function () {
         headHref: 'http://p4.music.126.net/_aHAAUPp3feRCjUvqZFZ-w==/109951164425666779.jpg?param=50y50',
     };
 
- 
+
     //存储  播放模式   的图标地址
     let playMod = [{
         text: "单曲循环",
@@ -51,11 +51,11 @@ $(function () {
 
 
     //如果当前页面不存在 songIndex 的本地存储，就复制 0
-    if(!localStorage.getItem('songIndex'))
-    localStorage.setItem('songIndex',0);//设置当前的歌曲  0
+    if (!localStorage.getItem('songIndex'))
+        localStorage.setItem('songIndex', 0);//设置当前的歌曲  0
 
-    if(!localStorage.getItem('mod'))
-    localStorage.setItem('mod',0);
+    if (!localStorage.getItem('mod'))
+        localStorage.setItem('mod', 0);
 
 
     let songlist = null;//歌单
@@ -72,13 +72,13 @@ $(function () {
 
     //处理播放模式的切换
     $mod.on('click', function () {
-        let index =localStorage.getItem('mod');// 获取模式
+        let index = localStorage.getItem('mod');// 获取模式
         console.log(index);
         //切换模式
         index = index == 3 ? 0 : ++index;//已经为3 ，就赋值为0
 
         $(this).css('background', playMod[index].url);
-       localStorage.setItem('mod',index);//设置新的模式
+        localStorage.setItem('mod', index);//设置新的模式
         console.log(playMod[index].url);
 
         //文字改变值，之后淡入淡出
@@ -136,13 +136,13 @@ $(function () {
             }
         });
     }
-  
+
 
 
 
 
     //页面加载，自动调用
-   //  loadAudia();
+    //  loadAudia();
 
     //获取歌曲的所有信息
     function loadAudia() {
@@ -152,7 +152,7 @@ $(function () {
         $songName.text(currentSon.name);//载入歌曲名称
         $audio.prop('src', currentSon.audioSrc);//载入歌曲资源
         $tatalTime.text(currentSon.totalTimeStr);//更改 总时间span
-        let index=localStorage.getItem('mod');
+        let index = localStorage.getItem('mod');
         $mod.css('background', playMod[index].url);
 
 
@@ -347,7 +347,7 @@ $(function () {
         console.log(songIndex);
         let next = 0;
         let mod = $mod.data("modindex");
-        mod= localStorage.getItem('mod');
+        mod = localStorage.getItem('mod');
         console.log("mod", $mod.data("modindex"));
         // console.log($mod);
 
@@ -363,18 +363,19 @@ $(function () {
             next = Math.floor(Math.random() * 4);//0 -3 随机数
 
         }
-        else if (mod == 2)//循环模式
+        else if (mod == 2)//循环模式    该模式下，播放到最后一首 停止播放
         {
             if (songIndex == songlist.length - 1)//当前歌曲是最后一首歌
             {
                 flag = false;//播放到最后一首 。停止一首歌的  加载，停止播放
+               
             }
             else {
                 next = songIndex + 1;
             }
 
         }
-        else if (mod == 3)//列表模式
+        else if (mod == 3)//列表模式,播放到最后一首 要从头开始
         {
             if (songIndex == songlist.length - 1)//当前歌曲是最后一首歌
             {
@@ -385,7 +386,7 @@ $(function () {
             }
         }
 
-        if (flag)//当不是顺序模式，或顺序模式下没有播放到下一首
+        if (flag)//当不是顺序模式，或顺序模式下 没有播放到下一首
         {
             currentSon = songlist[next];
 
@@ -440,8 +441,14 @@ $(function () {
 
         //当播放到底
         if (this.currentTime >= this.duration) {
+            //暂时处理为马上暂停
             //直接调用 next按钮的点击事件
-             $next.click();
+            $next.click();
+            $play.css('background-image', 'url(images/play.svg)');
+            $gan.removeClass('rotated');
+            $rotate.css('webkitAnimationPlayState', 'paused');
+            console.log($rotate.css('webkitAnimationPlayState'));
+            ;
         }
 
 
@@ -560,8 +567,8 @@ $(function () {
     $listIcon.on("click", function () {
         $list.toggleClass("none")
     });
-    let $lClose=$('.list .header .close');
-    $lClose.on('click',function(){
+    let $lClose = $('.list .header .close');
+    $lClose.on('click', function () {
         $list.addClass('none');
     })
 
