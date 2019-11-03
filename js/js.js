@@ -49,6 +49,15 @@ $(function () {
 
     let currentSon = null;
 
+
+    //如果当前页面不存在 songIndex 的本地存储，就复制 0
+    if(!localStorage.getItem('songIndex'))
+    localStorage.setItem('songIndex',0);//设置当前的歌曲  0
+
+    if(!localStorage.getItem('mod'))
+    localStorage.setItem('mod',0);
+
+
     let songlist = null;//歌单
     let $tatalTime = $('.totalTime');//存储当前歌曲总时长的span标签
     let $currentTime = $('.currentTime');//获取存储当前播放时间的span
@@ -59,15 +68,17 @@ $(function () {
     let preTime = 0;
     let $geci = $('.geci');
 
+
+
     //处理播放模式的切换
     $mod.on('click', function () {
-        let index = $(this).data('modindex');
+        let index =localStorage.getItem('mod');// 获取模式
         console.log(index);
         //切换模式
         index = index == 3 ? 0 : ++index;//已经为3 ，就赋值为0
 
         $(this).css('background', playMod[index].url);
-        $(this).data('modindex', index);
+       localStorage.setItem('mod',index);//设置新的模式
         console.log(playMod[index].url);
 
         //文字改变值，之后淡入淡出
@@ -141,6 +152,9 @@ $(function () {
         $songName.text(currentSon.name);//载入歌曲名称
         $audio.prop('src', currentSon.audioSrc);//载入歌曲资源
         $tatalTime.text(currentSon.totalTimeStr);//更改 总时间span
+        let index=localStorage.getItem('mod');
+        $mod.css('background', playMod[index].url);
+
 
         $rotate.css('background-image', `url(${currentSon.imgSrc})`);//获取新的旋转不见图片
         // console.log($audio.prop('src'));
@@ -333,6 +347,7 @@ $(function () {
         console.log(songIndex);
         let next = 0;
         let mod = $mod.data("modindex");
+        mod= localStorage.getItem('mod');
         console.log("mod", $mod.data("modindex"));
         // console.log($mod);
 
