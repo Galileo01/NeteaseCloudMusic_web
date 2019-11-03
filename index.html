@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="no-referrer"/>
+    <title>网易云音乐</title>
+    <link rel="icon" href="wangyi.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+<!-- <script src="js/jquery-1.12.4.js"></script> -->
+<script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+</head>
+
+<body>
+    <section class="content">
+        <nav class="nav">
+            <div class="nav-left"><span class="log">网易云音乐</span></div>
+        </nav>
+
+        <section class="play-wapper">
+            <div class="play-bg"></div>
+
+
+            <section class="play">
+                <div class="gan"></div>
+                <div class="rotate-left">
+                    <div class="rotate"></div>
+                    <div class="buttons">
+                        <button>喜欢</button>
+                        <button>收藏</button>
+                        <button>下载</button>
+                        <button>分享</button>
+                    </div>
+                </div>
+                <div class="Lyric">
+                    <section class="mp3">
+                        <audio src="audio/1987.mp3" autoplay></audio>
+                        <!-- autoplay -->
+                    </section>
+                    <p class="songName">那年1987我不知会遇见你</p>
+                    <div class="wapper"  data-mcs-theme="dark">
+                        <div class="geci">
+                        </div>
+                    </div>
+                    <!-- <textarea name="lrc" id="lrc" cols="20" rows="70" >
+                      
+                            </textarea> -->
+
+                </div>
+            </section>
+        </section>
+        <section class="body">
+            <section class="comment-wapper">
+                <h3>听友评论<span>(已有14605条评论)</span></h3>
+                <input type="text" class="disinput"  >
+                <div class="input-wapper">
+                    <p><span>添加评论<span class="input-close">X</span></span></p>
+                   
+         <textarea name="text" id="comment-input" cols="30" rows="10"></textarea>
+        <button class='submit-comment'>评论</button>
+        </div>
+                <p class="hp">精彩评论</p>
+                <ul class="comments">
+                    <!-- <li><img src="https://p2.music.126.net/icniwig1lY_K6tC0LO_ZdQ==/18591642115627287.jpg?param=50y50"
+                            alt="">
+                            <div class="ps-wapper">
+                            <p><a href="#" class="id">Polly的遮阳伞</a>:旋律不错，同意李宇春是才女 </p>
+                            <p class="cmt-time">2014年10月20日</p>
+                        </div>
+                        </li> -->
+                        
+                </ul>
+            </section>
+            <aside class="aside">
+                <div class="gedan">
+                    <p class="hp">包含这首歌的歌单</p>
+                    <div class="item"><img
+                            src="http://p1.music.126.net/gtDkwY4vi_XNhb9nU_LJkg==/109951163975417791.jpg?param=50y50"
+                            alt="1">
+                        <div class="ps">
+                            <p class="line1">精选‖孙燕姿/蔡健雅/田馥甄/刘惜君/梁静茹</p>
+                            <p class="line2">播放：704万</p>
+                        </div>
+                    </div>
+                    <div class="item"><img
+                            src="http://p1.music.126.net/oo1iDzuqNuoETILc-gNCmw==/109951163106670900.jpg?param=50y50"
+                            alt="1">
+                        <div class="ps">
+                            <p class="line1">那些要收费又很好听的歌</p>
+                            <p class="line2">播放：704万</p>
+                        </div>
+                    </div>
+                    <div class="item"><img
+                            src="http://p1.music.126.net/nwlpIoEI9lL498JhV-Z6lw==/19089720881926878.jpg?param=50y50"
+                            alt="1">
+                        <div class="ps">
+                            <p class="line1">青春里的花火，记忆里的回路</p>
+                            <p class="line2">播放：704万</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="like">
+                    <p class="hp">相似歌曲</p>
+                    <div class="item"><img
+                            src="http://p1.music.126.net/wc_4zG3XMFlku4AdeUHg1g==/109951163561148208.jpg?param=50y50"
+                            alt="1">
+                        <div class="ps">
+                            <p class="line1">在不疯狂我们九老了</p>
+                            <p class="line2">李宇春</p>
+                        </div>
+                    </div>
+                    <div class="item"><img
+                            src="http://p1.music.126.net/wc_4zG3XMFlku4AdeUHg1g==/109951163561148208.jpg?param=50y50"
+                            alt="1">
+                        <div class="ps">
+                            <p class="line1">在不疯狂我们九老了</p>
+                            <p class="line2">李宇春</p>
+                        </div>
+                    </div>
+                    <div class="item"><img
+                            src="http://p1.music.126.net/wc_4zG3XMFlku4AdeUHg1g==/109951163561148208.jpg?param=50y50"
+                            alt="1">
+                        <div class="ps">
+                            <p class="line1">在不疯狂我们九老了</p>
+                            <p class="line2">李宇春</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other">
+                    <p class="hp">喜欢这首歌的人</p>
+                    <div class="item"><img
+                            src="http://p4.music.126.net/ETZV6ahG1Izw7hKRxumUMg==/109951163313251108.jpg?param=40y40"
+                            alt="1">
+                            <p class="line1">白玉s</p>
+                    </div>
+                    <div class="item"><img
+                            src="http://p4.music.126.net/UAMA2EMLD4kvPsVBp46Wdg==/109951163238926273.jpg?param=40y40"
+                            alt="1">
+                            <p class="line1">在不疯狂我们九老了</p>
+                    </div>
+                    <div class="item"><img
+                            src="http://p3.music.126.net/YJ2b5gEcLfSyg64EXvFRvw==/109951164411643135.jpg?param=40y40"
+                            alt="1">
+                            <p class="line1">在不疯狂我们九老了</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <footer class="footer">
+            <div class="control-btns">
+            
+                <div class="wa">
+                    <div class="pre"></div>
+                </div>
+                <div class="wa">
+                    <div class="play-button"></div>
+                </div>
+                <div class="wa">
+                    <div class="next"></div>
+                </div>
+               
+            </div>
+            <div class="control-ohr">
+                <div class="process-wapper">
+                    <span class="currentTime">3:22</span>
+                    <div class="process-bar">
+                        <div class="process-line">
+                            <div class="process-dot"></div>
+                        </div>
+                    </div>
+                    <span class="totalTime">3:22</span>
+                </div>
+                <div class="volume-wapper">
+                    
+                    <div class="v-icon"></div>
+                    <div class="vo-bar">
+                        <div class="vo-line">
+                           <div class="vo-dot"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mod-wapper">
+                <div class="mod-text"></div>
+                <div class="mod" data-modindex="0"></div>
+            </div>
+                <div class="outer-geci"></div>
+                <div class="list-wapper"><div class="list-icon"></div>
+                <aside class="list none">
+                <div class="header">
+                    
+                    <div class="d1 d-checked">播放列表</div>
+                    <div class="d2">历史记录</div>
+                    <div class="close">X</div>
+                </div>
+                <ul class="lis">
+                    <div class="title">
+                        <span class="total">总3首</span>
+                        <span class="shoucang">收藏全部</span>
+                        <span  class="clear">清空</span>
+                    </div>
+                    <li><span class="name">那年1987我不知会遇见你</span>
+                    <span class="singer">李宇春</span>
+                <span class="stime">05:17</span>
+                </li>
+                <li><span class="name">那年1987我不知会遇见你</span>
+                    <span class="singer">李宇春</span>
+                <span class="stime">05:17</span>
+                </li>
+                <li><span class="name">那年1987我不知会遇见你</span>
+                    <span class="singer">李宇春</span>
+                <span class="stime">05:17</span>
+                </li>
+                </ul>
+                </aside>
+            </div>
+                <!-- TODO:  创建歌单列表，格栅样式 -->
+            
+
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>
+<!-- <script src="js/getlrc.js"></script> -->
+<script src="js/js.js"></script>

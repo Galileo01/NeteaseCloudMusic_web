@@ -1,0 +1,30 @@
+[
+    {
+        "name":"那年1987我不知会遇见你",
+        "index":0,
+        "audioSrc":"audio/1987.mp3",
+        "imgSrc":"http://p1.music.126.net/BgSP15hRRgAjCqjjHwp1OQ==/109951163077595152.jpg?param=130y130",
+        "lrcSrc":"lrc/1987lrc.json",
+        "commentSrc":"comments/1987Cmt.json",
+        "totalTimeStr":"05:17"
+    },
+    {
+        "name":"孤芳自赏",
+        "index":1,
+        "audioSrc":"audio/gu.mp3",
+        "imgSrc":"http://p1.music.126.net/Wcs2dbukFx3TUWkRuxVCpw==/3431575794705764.jpg?param=130y130",
+        "lrcSrc":"lrc/gulrc.json",
+        "commentSrc":"comments/guCmt.json",
+        "totalTimeStr":"04:09"
+    },
+    {
+        "name":"来自天堂的魔鬼",
+        "index":2,
+        "audioSrc":"audio/laizi.mp3",
+        "imgSrc":"http://p1.music.126.net/kVwk6b8Qdya8oDyGDcyAVA==/1364493930777368.jpg?param=130y130",
+        "lrcSrc":"lrc/laizilrc.json",
+        "commentSrc":"comments/laiziCmt.json",
+        "totalTimeStr":"04:05"
+    }
+
+]

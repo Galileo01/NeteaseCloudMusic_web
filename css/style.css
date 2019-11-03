@@ -1,0 +1,702 @@
+@import 'reset.css';
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    16% {
+        transform: rotate(60deg)
+    }
+    32% {
+        transform: rotate(120deg)
+    }
+    48% {
+        transform: rotate(180deg)
+    }
+    64% {
+        transform: rotate(240deg)
+    }
+    80% {
+        transform: rotate(300deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.content {
+    width: 1034px;
+    margin: 0 auto 40px auto;
+    /* height: 600px; */
+    background-color: #f5f5f5;
+    box-shadow: 0 0 10px #000;
+}
+
+.nav {
+    width: 1034px;
+    margin: 0 auto 40px auto;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    background-color: #c72e2e;
+    height: 40px;
+   
+}
+
+.nav .log {
+    color: white;
+    line-height: 44px;
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.nav .nav-left::before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/log.svg);
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    margin-left: 10px;
+    vertical-align: middle;
+    /*设置 居中对齐方式 */
+}
+
+.play-wapper {
+    width: 70%;
+    height: 350px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 40px;
+}
+
+.play-wapper .play-bg {
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    background-image: url(http://p1.music.126.net/BgSP15hRRgAjCqjjHwp1OQ==/109951163077595152.jpg?param=130y130);
+    filter: opacity(0.5) blur(30px);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.play {
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    overflow: hidden;
+}
+
+.gan {
+    background-image: url(../images/gan.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 2;
+    left: 70px;
+    top: -32px;
+    transform-origin: 82px 34px;
+    transform: rotate(-36deg);
+}
+
+.play .rotated {
+    /* 定义杆旋转的样式，，用于 js更改样式*/
+    transform: none;
+}
+
+.play .rotate-left .rotate {
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+    background-image: url(http://p1.music.126.net/BgSP15hRRgAjCqjjHwp1OQ==/109951163077595152.jpg?param=130y130);
+    display: inline-block;
+    /*触发BFC渲染模式，解决margin 塌陷的问题*/
+    border: 40px solid black;
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+    animation-play-state: paused;
+    /*页面刚加载完是时没有播放*/
+}
+
+.play .rotate-left .buttons {
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+.buttons button {
+    border: 1px solid #cdcdcd;
+    outline: none;
+    -webkit-appearance: none;
+    background: #f5f5f5;
+    border-radius: 5px;
+    display: block;
+    width: 50px;
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.Lyric {
+    width: 400px;
+    height: 350px;
+    /* background-color: black; */
+    overflow: hidden;
+}
+
+.Lyric .songName {
+    font-size: 24px;
+    text-align: center;
+    width: 300px;
+}
+
+.geci {
+    width: 300px;
+    transition: margin 0.5s;
+    overflow: auto;
+}
+
+.wapper {
+    /* overflow: hidden; */
+    overflow: auto;
+    ;
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.geci .highlight {
+    font-size: 20px;
+    color: white;
+}
+
+.geci p {
+    text-align: center;
+    width: 100%;
+    line-height: 24px;
+    font-size: 13px;
+    color: black;
+}
+
+textarea {
+    display: none;
+}
+
+.body {
+    width: 70%;
+    margin: 10px auto 0 auto;
+    /* height: 600px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-wapper {
+    width: 430px;
+    height: 100%;
+    /* background-color: #C20C0C; */
+}
+
+.comment-wapper h3 {
+    font-size: 15px;
+    font-weight: 400;
+    color: grey;
+    display: block;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #cdcdcd;
+    margin-bottom: 18px;
+}
+
+.comment-wapper h3 span {
+    font-size: 13px;
+    font-weight: 200;
+}
+
+.comment-wapper .disinput {
+    outline: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    display: block;
+    width: 98%;
+    border: 4px solid #cdcdcd;
+}
+
+.comment-wapper .input-wapper {
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    z-index: 4;
+    top: 500px;
+    margin-top: -100px;
+    left: 50%;
+    margin-left: -200px;
+    box-shadow: 2px 2px 1px #cdcdcd;
+    background-color: white;
+}
+
+.input-wapper {
+    display: none;
+}
+
+.input-wapper textarea {
+    resize: none;
+    /*取出右下角用于放大的标志*/
+    display: block;
+    outline: none;
+    -webkit-appearance: none;
+    background: white;
+    border: 1px solid #cdcdcd;
+    display: block;
+    width: 90%;
+    margin: 20px auto 0 auto;
+    height: 100px;
+}
+
+.input-wapper button {
+    border: 1px solid #cdcdcd;
+    outline: none;
+    -webkit-appearance: none;
+    background: rgb(148, 148, 228);
+    border-radius: 5px;
+    display: block;
+    width: 50px;
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    float: right;
+    margin-top: 20px;
+}
+
+.input-wapper::after {
+    /*清除浮动流*/
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.input-wapper p {
+    padding: 5px;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+    font-weight: 700px;
+    color: black;
+    width: 100%;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.input-wapper .input-close {
+    margin-left: 320px;
+    cursor: pointer;
+}
+
+.comment-wapper .hp {
+    display: block;
+    margin-top: 40px;
+    font-size: 10px;
+    color: #333;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+}
+
+.comments li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comments li {
+    /* height: 40px; */
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #cdcdcd;
+    padding: 10px 0 10px 0;
+}
+
+.comments p {
+    width: 100%;
+    font-size: 10px;
+    margin: 5px 0 5px 0;
+}
+
+.comments .ps-wapper .id {
+    font-size: 10px;
+}
+
+.ps-wapper .cmt-time {
+    color: grey;
+}
+
+.aside {
+    width: 250px;
+    height: 100%;
+}
+
+.footer {
+    width: 1034px;
+    background-color: #f5f5f5;
+    display: flex;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #cdcdcd;
+}
+
+.control-btns {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    margin: 9px 0 9px 20px;
+}
+
+.control-btns .wa {
+    width: 24px;
+    height: 24px;
+    background-color: #c72e2e;
+    opacity: 0.8;
+    border-radius: 50%;
+}
+
+.control-btns .wa:hover {
+    opacity: 1;
+}
+
+.control-btns .wa div {
+    width: 14px;
+    height: 14px;
+    background-size: 100%;
+    margin: 5px;
+}
+
+.control-btns .pre {
+    background-image: url(../images/pre.svg);
+}
+
+.control-btns .play-button {
+    background-image: url(../images/play.svg);
+}
+
+.control-btns .next {
+    background-image: url(../images/pre.svg);
+    transform: rotate(180deg);
+}
+
+.control-ohr {
+    width: 890px;
+    height: 40px;
+   
+    display: flex;
+}
+
+.control-ohr .process-wapper {
+    padding-left: 20px;
+    width: 664px;
+    height: 100%;
+    display: flex;
+    
+}
+.process-wapper span{
+    display: inline-block;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    color: black;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 30px;
+}
+
+
+.process-wapper .process-bar {
+    height: 4px;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: 584px;
+    border-radius: 2px;
+    margin-top: 18px;
+}
+
+.process-bar .process-line {
+    height: 4px;
+    width: 15px;
+    background-color: #C20C0C;
+    position: relative;
+    border-radius: 2px;
+}
+
+.process-bar .process-dot {
+    width: 14px;
+    height: 14px;
+    background: url(../images/processdot.svg) no-repeat 0 0;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    margin-top: -5px;
+    left: 8px;
+    cursor: pointer;
+    
+}
+
+.control-ohr .volume-wapper {
+    display: flex;
+    width: 100px;
+}
+
+.control-ohr .volume-wapper .v-icon {
+    display: block;
+    background: url(../images/vo.svg) no-repeat 0 0;
+    background-size: 100% 100%;
+    height: 16px;
+    width: 16px;
+    margin: 12px 0 12px 10px;
+}
+
+.volume-wapper .vo-bar {
+    height: 4px;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: 72px;
+    border-radius: 2px;
+    margin-top: 18px;
+    margin-left: 5px;
+}
+
+.volume-wapper .vo-line {
+    height: 4px;
+    width: 15px;
+    background-color: #c72e2e;
+    position: relative;
+    border-radius: 2px;
+}
+.vo-bar .vo-dot{
+    width: 14px;
+    height: 14px;
+    background: url(../images/processdot.svg) no-repeat 0 0;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    margin-top: -5px;
+    left: 8px;
+    display: none;
+    cursor: pointer;
+}
+.volume-wapper .vo-bar:hover .vo-dot{
+    display: block;
+}
+.control-ohr .mod-wapper{
+    position: relative;
+}
+.mod-wapper .mod-text{
+    width:90px;
+    height: 24px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    font-size: 10px;
+    position: absolute;
+    z-index: 3;
+    top:-38px;
+    left:-40px;
+    display: none;
+    margin-left: 5px;
+}
+
+.mod, .outer-geci, .list-icon {
+    width: 16px;
+    height: 16px;
+    background-size: 100% 100%;
+}
+
+
+.mod-wapper, .outer-geci, .list-wapper {
+    margin: 12px  0 12px 18px;
+    cursor: pointer;
+}
+.mod {
+    background: url(../images/play-one.svg) no-repeat 0 0;
+}
+
+.outer-geci {
+    background: url(../images/ci-icon.svg) no-repeat 0 0;
+}
+
+.list-icon {
+    background: url(../images/gequliebiao.svg) no-repeat 0 0;
+}
+
+.list-wapper .list{
+    width: 400px;
+    height: 500px;
+    box-shadow: 0 0 3px #000;
+    background-color: #f5f5f5;
+    background-color:white;
+    position: absolute;
+    z-index: 2;
+    bottom:40px;
+    right: 0;
+}
+.list-wapper .none{
+    display: none;
+}
+.list .header div{
+    color: black;
+    background-color:white;
+    font-size: 10px;
+    width: 100px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    margin: 4px 0 4px 0;
+    cursor: pointer;
+}
+.list .header{
+    background-color: #f5f5f5;
+    height: 30px;
+    display: flex;
+   width: 100%;
+   border-bottom: 1px solid rgb(220,220,226);
+}
+.list .header div.d-checked{
+    color: white;
+    background-color:rgb(124,125,133);
+}
+.list .header .d1{
+     border-top-left-radius: 5px;
+     border-bottom-left-radius: 5px;
+     margin-left: 100px;
+}
+.list .header .d2{
+    border-top-right-radius: 5px;
+     border-bottom-right-radius: 5px;
+     margin-right: 100px;
+}
+
+.lis li{
+    height: 24px;
+}
+.lis .title{
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    color: rgb(102,102,102);
+    /* background-color: red; */
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border-bottom: 1px solid rgb(220,220,226);
+}
+
+.title span{
+    position: absolute;
+    display: block;
+    top:0;
+    
+}
+.shoucang {
+right:60px
+}
+.shoucang::after{
+    content: "|";
+    margin-left: 10px;
+}
+.total {
+    left:30px;
+}
+.clear{
+    width:50px;
+    right: 0;
+}
+
+.lis li{
+    height:24px;
+    width:100%;
+    display: flex;
+justify-content: space-between;
+}
+
+.lis span{
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    color: rgb(102,102,102);
+    display: block;
+    cursor: pointer;
+}
+.lis .name{
+    width: 200px;
+    margin-left: 30px;
+}
+.lis .singer{
+    width: 60px;
+    margin-left: 60px;
+}
+.lis .stime{
+    width: 60px;
+    margin-right: 10px;
+}
+
+.lis li:nth-child(odd)
+{
+    background-color: rgb(245, 245, 247);
+}
+.lis li:hover{
+    background-color: rgb(235,236,237);
+}
+.aside div {
+    width: 100%;
+}
+.list .header div.close{
+    width: 20px;
+    height: 20px;
+    background-color: #f5f5f5;
+}
+.aside .hp {
+    font-size: 14px;
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+}
+
+.aside img {
+    /* display: block; */
+    width: 40px;
+    height: 40px;
+}
+
+.aside .ps {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    color: black;
+    font-size: 10px;
+}
+
+.ps p {
+    line-height: 20px;
+    overflow: hidden;
+    width: 200px;
+}
+
+.other img {
+    border-radius: 20px;
+}
+
+.other p {
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    display: inline-block;
+    width: 100px;
+    font-size: 10px;
+}
