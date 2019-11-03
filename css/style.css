@@ -334,7 +334,9 @@ textarea {
 .comments .ps-wapper .id {
     font-size: 10px;
 }
-
+.comments .ps-wapper{
+    width: 380px;
+}
 .ps-wapper .cmt-time {
     color: grey;
 }
