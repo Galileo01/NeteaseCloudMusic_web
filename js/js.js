@@ -439,14 +439,9 @@ $(function () {
 
 
         //当播放到底
-        if (this.currentTime == this.duration) {
-            //暂时处理为马上暂停
-            $play.css('background-image', 'url(images/play.svg)');
-            $gan.removeClass('rotated');
-            $rotate.css('webkitAnimationPlayState', 'stop');
-
-
+        if (this.currentTime = this.duration) {
             //直接调用 next按钮的点击事件
+             $next.click();
         }
 
 
