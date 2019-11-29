@@ -4,7 +4,8 @@
 网页版网易云音乐
 v 1.4.1
 
-在线访问 pages  服务  :   https://ego-git.gitee.io/music.163-web_wangyiyunyinyue/
+在线访问 pages  服务  :    
+https://ego-git.gitee.io/music.163-web_wangyiyunyinyue/
 #### 软件架构
 jQuery + css  +html
 主要 响应方式 ：Ajax（对json文件发送请求）
