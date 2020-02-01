@@ -17,10 +17,5 @@ jQuery + css  +html
 3. 进度和音量 可以点击，但还没 写拖动（其实耶差不多）
 4. 科普：顺序模式 下播放完最后一首 就会停止播放  而 列表模式就会从头开始播放
 
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+最新issues
+1.根据搜索结果 从chrome浏览器的某个版本开始，处于安全考虑，禁止浏览器 未知媒体文件的 autoplay 属性 
